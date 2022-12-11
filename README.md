@@ -23,31 +23,23 @@ Kami menyatakan isi tugas, kode program, dan laporan kegiatan magang dibuat oleh
 Jika Kami melakukan plagiasi, kecurangan, atau melanggar hak kekayaan intelektual, Kami siap untuk mendapat sanksi atau hukuman sesuai peraturan perundang-undangan yang berlaku.
 
 ## Aplikasi Inventaris
-Aplikasi inventaris ini dibuat guna untuk membantu pegawai dalam memanajemen service pada barang milik negara, dimana dari anggaran yang diberikan user dapat mengelola dan mengimputkan bukti service barang sehingga terdapat pencatatan berupa report laporan pada setiap pengeluaran.
+Aplikasi inventaris ini dibuat guna untuk membantu pegawai dalam memanajemen service pada barang milik negara yang berada di Kantor BPS, dimana dari anggaran yang diberikan, user dapat mengelola dan menginputkan bukti service barang sehingga terdapat pencatatan yang jelas berupa report laporan pada setiap pengeluaran.
 Fitur-fitur yang ada pada aplikasi ini adalah :
 
-|Fitur / Hasil Kebutuhan    |   Fungsi / Prosedur|
-|--|--|
-|1. Halaman Beranda                         |Menampilkan data inti| 
-    a)	Menampilkan halaman Dashboard  
-|--|--|
-|2. Halaman Barang                          |Menampilkan data barang yang bermasalah atau pun tidak bermasalah,dengan menambahkan data dan import data barang.| 
-    a)	Menampilkan import dan tambah data, 
-    serta kondisi barang. Dan aksi yang    
-    diberikan pada data barang yang di      
-    tambahkan
-|3. Halaman Service                         |Bisa melihat data nota barang yang selesai di service dan dapat melihat data pengunggah nota. Tanggal ditambahkannya 
-    a)	Menampilkan tambah atau upload nota  sebuah nota yang sudah di upload dan respon.| 
-    b)	Gambar nota dan respon yang di       
-    terima setelah upload nota di lakukan.  
-    c)	Menampilkan nama penggunggah nota.  
-
-|4. Halaman Ruang                           |Fungsi ini untuk menampilkan data ruangan ada di dalam kantor BPS Kota Malang. |
-    a)	Menampilkan nama-nama ruangan yang  
-    berada di kantor                        
-|5. Halaman User                            |Dapat melihat data user yang menggunakan aplikasi website ini. Dengan dilengkapi adanya nama dan email serta tanggal.
-    a)	Menampilkan data user yang           Data user ini yang dapat melakukan reaksi pada tiap bagian pada aplikasi. |
-    melakukan  login dengan aplikasi.
+|No|Fitur / Hasil Kebutuhan    |   Fungsi / Prosedur|
+|--|--|--|
+|1.| Halaman Beranda |Menampilkan data inti| 
+|  |a)	Menampilkan halaman Dashboard |             
+|2.| Halaman Barang  |Menampilkan data barang yang bermasalah atau pun tidak bermasalah,dengan menambahkan data dan import data barang | 
+|  |a)	Menampilkan import dan tambah data,serta kondisi barang. Dan aksi yang diberikan pada data barang yang di tambahkan|  
+|3.| Halaman Service |Bisa melihat data nota barang yang selesai di service dan dapat melihat data pengunggah nota. Tanggal ditambahkannya                                                 sebuah nota yang sudah di upload dan respon.| 
+|  |a)	Menampilkan tambah atau upload nota |  
+|  |b)	Gambar nota dan respon yang diterima setelah upload nota di lakukan. |
+|  |c)	Menampilkan nama penggunggah nota.|
+|4.| Halaman Ruang |Fungsi ini untuk menampilkan data ruangan ada di dalam kantor BPS Kota Malang. |
+|  | a)	Menampilkan nama-nama ruangan yang berada di kantor  |   |                   
+|5.| Halaman User  |Dapat melihat data user yang menggunakan aplikasi website ini. Dengan dilengkapi adanya nama dan email serta tanggal. Data user ini yang dapat melakukan reaksi pada tiap bagian pada aplikasi. |
+|  |a)	Menampilkan data user yang melakukan  login dengan aplikasi.| |
                     
 ### Ucapan terima kasih
 

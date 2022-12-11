@@ -28,8 +28,9 @@ Fitur-fitur yang ada pada aplikasi ini adalah :
 
 |Fitur / Hasil Kebutuhan    |   Fungsi / Prosedur|
 |--|--|
-|1. Halaman Beranda                         |Menampilkan data inti  | 
-    a)	Menampilkan halaman Dashboard       
+|1. Halaman Beranda                         |Menampilkan data inti| 
+    a)	Menampilkan halaman Dashboard  
+|--|--|
 |2. Halaman Barang                          |Menampilkan data barang yang bermasalah atau pun tidak bermasalah,dengan menambahkan data dan import data barang.| 
     a)	Menampilkan import dan tambah data, 
     serta kondisi barang. Dan aksi yang    

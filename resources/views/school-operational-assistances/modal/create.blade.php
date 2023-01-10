@@ -14,8 +14,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="name">Uploader</label>
-                                <input type="text" name="uploader" class="form-control"  value=" {{ Auth::user()->name }} " id="uploader_create" readonly>
+                                <input type="hidden" name="uploader" class="form-control"  value=" {{ Auth::user()->id }}" id="uploader_create" readonly>
                             </div>
                          </div>
                         @can('admin')
@@ -28,16 +27,45 @@
                         @endcan
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label>Gambar:</label>
-                                <input class="form-control" type="file" id="image_create" name="image" class="form-control">
+                                <label for="acquisition">Serial Number</label>
+                                <select class="custom-select" name="serial_num" id="user_create">
+                                <option selected>Pilih</option>
+                                @foreach($commodities as $Commodities)
+                                <option value="{{ $Commodities->serial_number }}">{{ $Commodities->serial_number }}</option>
+                                @endforeach
+                                </select>
                             </div>
-                        </div>    
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="description">Total Harga</label>
+                         <input type="text" name="total" class="form-control" >
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group"
+                                <label for="description">Mitra</label>
+                                <input type="text" name="mitra" class="form-control" >
+                            </div>
+                        </div>
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label for="description">Deskripsi</label>
-                                <textarea name="description" class="form-control" id="description_create" cols="30" rows="10"></textarea>
+                                  <input type="text" name="description" class="form-control" >
+                            </div>
+                            <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="description">Tanggal Perbaikan</label>
+                                  <input type="date" name="date" class="form-control" >
                             </div>
                         </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Unggah bukti pembayaran</label>
+                                <input class="form-control" type="file" id="image_create" name="image" class="form-control">
+                            </div>
+                        </div>    
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

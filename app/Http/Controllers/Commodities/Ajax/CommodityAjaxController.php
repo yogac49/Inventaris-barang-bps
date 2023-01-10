@@ -12,13 +12,13 @@ class CommodityAjaxController extends Controller
     {
         $commodities = new Commodity();
         $commodities->commodity_location_id = $request->commodity_location_id;
-        $commodities->item_code = $request->item_code;
+        $commodities->serial_number = $request->serial;
         $commodities->name = $request->name;
         $commodities->brand = $request->brand;
         $commodities->date_of_purchase = date_format(date_create($request->date_of_purchase),"d-m-Y");
         $commodities->condition = $request->condition;
         $commodities->quantity = $request->quantity;
-        $commodities->price = $request->price;
+        $commodities->user = $request->user;
         $commodities->note = $request->note;
         $commodities->save();
 
@@ -31,14 +31,14 @@ class CommodityAjaxController extends Controller
 
     $data = [
             'commodity_location_id' => $commodity->commodity_location->name,
-            'item_code' => $commodity->item_code,
+            'serial' => $commodity->serial_number,
             'name' => $commodity->name,
             'brand' => $commodity->brand,
             $commodity->date_of_purchase,
             'date_of_purchase' => $commodity->date_of_purchase,
             'condition' => $commodity->condition,
             'quantity' => $commodity->quantity,
-            'price' => $commodity->indonesian_currency($commodity->price),
+            // 'price' => $commodity->indonesian_currency($commodity->price),
             'note' => $commodity->note,
         ];
 
@@ -80,7 +80,7 @@ class CommodityAjaxController extends Controller
         $commodities->date_of_purchase = date_format(date_create($request->date_of_purchase),"d-m-Y");
         $commodities->condition = $request->condition;
         $commodities->quantity = $request->quantity;
-        $commodities->price = $request->price;
+        // $commodities->price = $request->price;
         // $commodities->price_per_item = $request->price_per_item;
         $commodities->note = $request->note;
         $commodities->save();

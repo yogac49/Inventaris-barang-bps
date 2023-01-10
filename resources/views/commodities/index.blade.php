@@ -66,7 +66,8 @@
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Kodeaa Barang</th>
+              <th scope="col">User</th>
+              <th scope="col">Kode Barang</th>
               <th scope="col">Nama Barang</th>
               <th scope="col">Tahun Pembelian</th>
               <th scope="col">Kondisi</th>
@@ -77,7 +78,7 @@
             @foreach($commodities as $commodity)
             <tr>
               <th scope="row">{{ $loop->iteration }}</th>
-              <td>{{ $commodity->item_code }}</td>
+              <td>{{ $commodity->serial_number }}</td>
               <td>{{ Str::limit($commodity->name, 55, '...') }}</td>
               <td>{{ $commodity->date_of_purchase }}</td>
               @if($commodity->condition === 1)

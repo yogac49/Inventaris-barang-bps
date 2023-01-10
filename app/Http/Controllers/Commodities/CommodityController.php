@@ -7,6 +7,10 @@ use App\CommodityLocation;
 use App\Http\Controllers\Controller;
 use App\SchoolOperationalAssistance;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use DB;
+
 
 class CommodityController extends Controller
 {
@@ -17,11 +21,28 @@ class CommodityController extends Controller
      */
     public function index()
     {
-        $commodities = Commodity::latest()->get();
+        // Auth::user()->name
+        $field =Auth::user(); 
+        if($field->role == 'admin'){
+        //$commodities = Commodity::where('name','ASC',$field)->first('name');
+    
+        // $commodities = commodity::where('id', $field->id)->get();
+// elequent 
+        $commodities = Commodity::orderBy('name', 'ASC')->get();
+        $user= user::orderBy('name', 'ASC')->get();
         $school_operational_assistances = SchoolOperationalAssistance::orderBy('name', 'ASC')->get();
         $commodity_locations = CommodityLocation::orderBy('name', 'ASC')->get();
+        return view('commodities.index', compact( 'commodities', 'school_operational_assistances', 'commodity_locations','user'));
 
-        return view('commodities.index', compact('commodities', 'school_operational_assistances', 'commodity_locations'));
+        // dd($commodities);
+        }else{
+            $commodities = DB::table('commodities')->where('user',  $field->id)->get();
+            $user= user::orderBy('name', 'ASC')->get();
+            $school_operational_assistances = SchoolOperationalAssistance::orderBy('name', 'ASC')->get();
+            $commodity_locations = CommodityLocation::orderBy('name', 'ASC')->get();
+            return view('commodities.index', compact( 'commodities', 'school_operational_assistances', 'commodity_locations','user'));
+
+        }
     }
 
     /**

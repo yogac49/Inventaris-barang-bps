@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SchoolOperationalAssistances\Ajax;
 use App\Http\Controllers\Controller;
 use App\SchoolOperationalAssistance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SchoolOperationalAssistanceAjaxController extends Controller
 {
@@ -51,10 +52,17 @@ class SchoolOperationalAssistanceAjaxController extends Controller
     $file->move('file/upload',$file->getClientOriginalName());
 
         $service = new SchoolOperationalAssistance();
+        $service->id_user = $request->uploader;
         $service->uploader = $request->uploader;
         $service->name = $request->name;
+        $service->serial_num = $request->serial_num;
+        $service->total = $request->total;
+        $service->mitra = $request->mitra;
         $service->image       = $nama_file;
+        $service->service_date = date_format(date_create($request->date),"d-m-Y");
         $service->description = $request->description;
+        $service->status = "1";
+
         $service->save();
 
         return response()->json(['status' => 200, 'message' => 'Success', 'data' => $service], 200);

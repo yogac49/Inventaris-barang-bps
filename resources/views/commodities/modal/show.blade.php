@@ -11,8 +11,8 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-lg-12">
-            <label for="item_code"><b>Kode Barang</b></label>
-            <input type="text" name="" class="form-control" id="item_code" placeholder="" disabled>
+            <label for="serial"><b>Serial Number</b></label>
+            <input type="text" name="" class="form-control" id="serial" placeholder="" disabled>
           </div>
         </div>
         <hr>
@@ -83,15 +83,7 @@
               <input type="text" id="price" class="form-control" placeholder="" disabled>
             </div>
           </div>
-          <div class="col-lg-4">
-            <label for="price_per_item"><b>Harga Satuan</b></label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Rp.</span>
-              </div>
-              <input type="text" id="price_per_item" class="form-control" placeholder="" disabled>
-            </div>
-          </div>
+          
         </div>
 
       </div>

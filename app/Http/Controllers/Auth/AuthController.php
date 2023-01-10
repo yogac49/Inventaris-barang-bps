@@ -8,7 +8,8 @@ use App\Models\Role;
 class AuthController extends Controller
 {
     public function login() {
-        return view('auth.login');
+        $user= user::orderBy('name', 'ASC')->get();
+        return view('auth.login')->compat('user');
     }
 
     public function dologin(Request $request) {

@@ -12,8 +12,8 @@
                     _token: token
                 },
                 success: function(data) {
-                    $("#modalLabel").html(data.data.item_code)
-                    $("#item_code").val(data.data.item_code)
+                    $("#modalLabel").html(data.data.serial_number)
+                    $("#serial").val(data.data.serial_number)
                     $("#commodity_location_id").html(data.data.commodity_location_id)
                     $("#name").html(data.data.name)
                     $("#brand").val(data.data.brand)
@@ -39,15 +39,14 @@
                     _token: token,
                     school_operational_assistance_id: $("#school_operational_assistance_id_create").val(),
                     commodity_location_id: $("#commodity_location_id_create").val(),
-                    item_code: $("#item_code_create").val(),
+                    serial: $("#serial").val(),
                     name: $("#name_create").val(),
                     brand: $("#brand_create").val(),
                     material: $("#material_create").val(),
                     date_of_purchase: $("#date_of_purchase_create").val(),
+                    user: $("#user_create").val(),
                     condition: $("#condition_create").val(),
                     quantity: $("#quantity_create").val(),
-                    price: $("#price_create").val(),
-                    price_per_item: $("#price_per_item_create").val(),
                     note: $("#note_create").val(),
                 },
                 success: function(data) {
@@ -150,10 +149,10 @@
                         timerProgressBar: true,
                         onBeforeOpen: () => {
                             Swal.showLoading();
-                            timerInterval = setInterval(() => {
+                            timerInterval = setInterval
+                                    const b = content.quer(() => {
                                 const content = Swal.getContent();
-                                if (content) {
-                                    const b = content.querySelector("b");
+                                if (content) {ySelector("b");
                                     if (b) {
                                         b.textContent = Swal.getTimerLeft();
                                     }

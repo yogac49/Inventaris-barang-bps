@@ -23,6 +23,7 @@
               <th scope="col">Nama</th>
               <th scope="col">Nota</th>
               <th scope="col">Tanggal Ditambahkan</th>
+              <th scope="col">Status</th>
               <th scope="col">Aksi</th>
             </tr>
           </thead>
@@ -34,6 +35,31 @@
               <td>{{ $school_operational_assistance->name }}</td>
               <td style="width:15%;" class="text-center"><img class="img-fluid" src="{{asset('file/upload/'.$school_operational_assistance ->image)}}" /></td>
               <td>{{ $school_operational_assistance->created_at }}</td>
+              @can('admin')
+              @if($school_operational_assistance->status === 1)
+              <td>
+                <span class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="top" title="">Disetujui</span>
+              </td>
+              @elseif($school_operational_assistance->status === 2)
+              <td>
+              <a data-id="{{ $school_operational_assistance->id }}" class="btn btn-sm btn-success text-white " title="ditolak">
+              <i class="fas fa-check-square"></i>
+                </a>
+                <a href="route('school_operational_assistance.update', ['id' => $school_operational_assistance->id ]) }}" type="submit" class="btn btn-sm btn-danger text-white swal-edit-button" title="Tolak" >
+                <i class="fas fa-window-close"></i>
+                </a>           
+               </td>
+              @elseif($school_operational_assistance->status === 0)
+              @endcan
+              @else
+              <td>
+                <span class="badge badge-pill badge-warning" data-toggle="tooltip" data-placement="top" title="">Menunggu </span>
+              </td>
+              
+              @endif
+              
+
+            
               <td class="text-center">
                 <a data-id="{{ $school_operational_assistance->id }}" class="btn btn-sm btn-info text-white show_modal" data-toggle="modal" data-target="#show_school_operational_assistance">
                   <i class="fas fa-fw fa-info"></i>

@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/dashboard', 'HomeController@index')->name('home');
     Route::resource('/barang', 'Commodities\CommodityController');
     Route::resource('/service', 'SchoolOperationalAssistances\SchoolOperationalAssistance');
+    Route::resource('/update', 'SchoolOperationalAssistances\SchoolOperationalAssistance@updateconfirm');
     Route::resource('/ruang', 'CommodityLocations\CommodityLocationController');
     Route::resource('/user', 'users\UserController')->middleware('admin');
     Route::resource('/commodities/json', 'Commodities\Ajax\CommodityAjaxController');

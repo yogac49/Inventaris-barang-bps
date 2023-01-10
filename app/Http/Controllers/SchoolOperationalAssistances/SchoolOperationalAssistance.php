@@ -5,8 +5,13 @@ namespace App\Http\Controllers\SchoolOperationalAssistances;
 use App\Http\Controllers\Controller;
 use App\SchoolOperationalAssistance as AppSchoolOperationalAssistanceModel;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
+use App\Commodity;
+use App\User;
+use DB;
 class SchoolOperationalAssistance extends Controller
+
+
 {
     /**
      * Display a listing of the resource.
@@ -14,12 +19,30 @@ class SchoolOperationalAssistance extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $school_operational_assistances = AppSchoolOperationalAssistanceModel::orderBy('name', 'ASC')->get();
-        return view('school-operational-assistances.index', compact('school_operational_assistances'));
+{
+   
+        $field =Auth::user();
+    //    ddd($field);
+        if($field->role == 'admin'){
+         $school_operational_assistances = AppSchoolOperationalAssistanceModel::orderBy('name', 'ASC')->get();
+         $commodities= Commodity::orderBy('name',  'ASC')->get();
+         return view('school-operational-assistances.index', compact('school_operational_assistances','commodities'));
+
+    }else{
+        $field =Auth::user();
+        // ddd($field);
+        $school_operational_assistances  = DB::table('school_operational_assistances')->where('id_user',  $field->id)->get();
+        // $school_operational_assistances = AppSchoolOperationalAssistanceModel::orderBy('name', 'ASC',$user)->get();
+        $commodities= Commodity::orderBy('name',  'ASC')->get();
+        return view('school-operational-assistances.index', compact('school_operational_assistances','commodities'));
     }
+}
+   public function updateconfirm(Request $request, SubmitApplication $submitApplication)
+   {
+       $submitApplication->update(['status', 1]);
+       return back();  
     
-       
+}
     
     /**
      * Show the form for creating a new resource.

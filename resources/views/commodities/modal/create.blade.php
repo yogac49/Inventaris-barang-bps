@@ -15,17 +15,17 @@
             <div class="col-lg-6">
               <div class="form-group">
                 <label for="item_code">Kode Barang</label>
-                <input type="text" name="item_code" class="form-control" id="item_code_create">
+                <input type="text" name="serial" class="form-control" id="serial_create">
               </div>
             </div>
 
             <div class="col-lg-6">
               <div class="form-group">
-                <label for="acquisition">Asal Perolehan</label>
-                <select class="custom-select" id="school_operational_assistance_id_create">
+                <label for="acquisition">User</label>
+                <select class="custom-select" id="user_create">
                   <option selected>Pilih</option>
-                  @foreach($school_operational_assistances as $school_operational_assistance)
-                  <option value="{{ $school_operational_assistance->id }}">{{ $school_operational_assistance->name }}</option>
+                  @foreach($user as $users)
+                <option value="{{ $users->id }}">{{ $users->name }}</option>
                   @endforeach
                 </select>
               </div>
@@ -96,7 +96,7 @@
               </div>
             </div>
 
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4">
               <div class="form-group">
                 <label for="price">Harga</label>
                 <input type="number" class="form-control" id="price_create">
@@ -109,7 +109,7 @@
                 <input type="number" class="form-control" id="price_per_item_create">
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="row">
             <div class="col-lg-12">
